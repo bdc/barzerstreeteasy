@@ -1,0 +1,62 @@
+.bg
+{
+	position: absolute;
+	z-index: -10;
+	left: 50%;
+	top: 0;
+	margin-left: -960px;
+	width: 1920px;
+	height: 164px;
+	background: url("http://barzer.net/img/new2/head-bg-center.png") no-repeat;
+}
+
+.content
+{
+	margin: 0 auto;
+	align: center;
+	width: 800px;
+}
+
+.logocolumn
+{
+	width: 10px;
+	padding: 20px;
+}
+
+.text
+{
+	font-family: 'Trebuchet MS', Arial, Geneva, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: white;
+}
+
+.resulturl
+{
+	font-family: 'Trebuchet MS', Arial, Geneva, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: white;
+	text-decoration: none;
+}
+
+input.searchinput
+{
+	width: 500px;
+	border-radius: 8px;
+	font-family: Arial;
+	font-size: 20px;
+	font-weight: normal;
+	height: 46px;
+	padding: 4px;
+	border-width: 4px;
+	border-color: #EE5328;
+}
+
+table
+{
+	width: 100%;
+	border: 0px solid black;
+}
+
+
