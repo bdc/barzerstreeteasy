@@ -4,7 +4,7 @@ var url = {
 	static : {
 		rentals : 'http://streeteasy.com/nyc/rentals/',
 		sales   : 'http://streeteasy.com/nyc/sales/',
-		keyword : 'http://streeteasy.com/nyc/search?search=',
+		keyword : 'http://streeteasy.com/nyc/search?search='
 	},
 	base : "",
 	attrs: {},
@@ -52,7 +52,7 @@ var url = {
 			if(this.attrs.hasOwnProperty(attr) && attr !== 'notempty')
 				tempurl += '|' + attr + this.attrs[attr];
 		return tempurl;
-	},
+	}
 };
 
 
@@ -173,7 +173,9 @@ function parseresponse(rsp)
 		}
 	}
 
-	setstatus("Results below. [<A class='resulturl' href='#' onclick='top.window.prompt(\"Barzer response\",\"" + JSON.stringify(rsp).replace(/([\\"'])/g, "\\$1").replace(/\0/g, "\\0") + "\")'>click to view Barzer response</A>] [<A class='resulturl' href='#' onclick='top.window.prompt(\"Result\",\"" + url.tostr() + "\")'>click to view resulting url</A>] ");
+	if(/Microsoft/.exec(navigator.appName))
+		setstatus("Results below.");
+	else setstatus("Results below. [<A class='resulturl' href='#' onclick='top.window.prompt(\"Barzer response\",\"" + JSON.stringify(rsp).replace(/([\\"'])/g, "\\$1").replace(/\0/g, "\\0") + "\")'>click to view Barzer response</A>] [<A class='resulturl' href='#' onclick='top.window.prompt(\"Result\",\"" + url.tostr() + "\")'>click to view resulting url</A>] ");
 
 	// load get in other frame
 	parent.streeteasyframe.location.href = url.tostr();
@@ -217,7 +219,7 @@ function barzerstreeteasyentitymapping(barzerentity)
 	  'status.Rental' : 'rentals',
 	  // entities which ARE categories
 	  'bedroom' : 'beds',
-	  'bathroom' : 'baths',
+	  'bathroom' : 'baths'
 	};
 	if(!barzerstreeteasyentitymap.hasOwnProperty(barzerentity))
 		return '';
@@ -492,7 +494,7 @@ function barzerstreeteasylocationmapping(barzerlocationid)
 		"195" : "422", // Woodhaven
 		"246" : "244", // Woodlawn
 		"315" : "584", // Woodrow
-		"196" : "404", // Woodside
+		"196" : "404"  // Woodside
 	};
 	if(!barzerstreeteasylocationmap.hasOwnProperty(barzerlocationid))
 		return "0";
